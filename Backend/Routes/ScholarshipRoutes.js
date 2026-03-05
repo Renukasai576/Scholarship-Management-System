@@ -1,45 +1,50 @@
-const requireAuth = require("../middleware/authMiddleware");
+console.log("ScholarshipRoutes loaded");
 const express = require("express");
 const router = express.Router();
+const { requireAuth } = require("@clerk/express");
 
-const scholarshipController = require("../Controllers/ScholarshipController");
+const adminMiddleware = require("../middleware/adminMiddleware");
 
-// ===============================
-// CREATE Scholarship
-// POST /api/scholarships
-// ===============================
-router.post("/", scholarshipController.createScholarship);
+const {
+  createScholarship,
+  getScholarships,
+  getScholarshipById,
+  updateScholarship,
+  deleteScholarship,
+  filterScholarships
+} = require("../Controllers/ScholarshipController");
 
-// ===============================
-// GET All Scholarships
-// GET /api/scholarships
-// ===============================
-router.get("/", scholarshipController.getScholarships);
 
-// ===============================
-// GET Single Scholarship by ID
-// GET /api/scholarships/:id
-// ===============================
-router.get("/:id", scholarshipController.getScholarshipById);
+// =======================
+// PUBLIC ROUTES
+// =======================
 
-// ===============================
-// UPDATE Scholarship
-// PUT /api/scholarships/:id
-// ===============================
-router.put("/:id", scholarshipController.updateScholarship);
+// Get all scholarships
+router.get("/", getScholarships);
 
-// ===============================
-// DELETE Scholarship
-// DELETE /api/scholarships/:id
-// ===============================
-router.delete("/:id", scholarshipController.deleteScholarship);
-// ===============================
-// PARTIAL UPDATE Scholarship
-// PATCH /api/scholarships/:id
-// ===============================
-router.patch("/:id", scholarshipController.updateScholarship);
-//filter router
-router.post("/filter", scholarshipController.filterScholarships);
+// Get single scholarship
+router.get("/:id", getScholarshipById);
 
+
+// =======================
+// STUDENT ROUTES
+// =======================
+
+// Filter scholarships (Student must be logged in)
+router.post("/filter", requireAuth(), filterScholarships);
+
+
+// =======================
+// ADMIN ROUTES
+// =======================
+
+// Create scholarship (Admin only)
+router.post("/", requireAuth(), adminMiddleware, createScholarship);
+
+// Update scholarship (Admin only)
+router.put("/:id", requireAuth(), adminMiddleware, updateScholarship);
+
+// Delete scholarship (Admin only)
+router.delete("/:id", requireAuth(), adminMiddleware, deleteScholarship);
 
 module.exports = router;

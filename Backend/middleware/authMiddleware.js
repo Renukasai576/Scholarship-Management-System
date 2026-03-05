@@ -1,5 +1,3 @@
-const { ClerkExpressRequireAuth } = require("@clerk/clerk-sdk-node");
+const { requireAuth } = require("@clerk/express");
 
-const requireAuth = ClerkExpressRequireAuth();
-
-module.exports = requireAuth;
+module.exports = requireAuth();

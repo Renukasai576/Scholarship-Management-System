@@ -1,5 +1,5 @@
 const Scholarship = require("../Models/Scholarship");
-
+const Student = require("../Models/Student");
 exports.createScholarship = async (req, res) => {
     try {
         const scholarship = new Scholarship(req.body);
@@ -64,23 +64,37 @@ exports.deleteScholarship = async (req, res) => {
 };
 //Filter Scholarship router
 exports.filterScholarships = async (req, res) => {
-    try {
-        const { caste, income, gender, state, educationLevel, marks } = req.body;
+  try {
+    const clerkId = req.auth.userId; // ✅ secure way
 
-        const scholarships = await Scholarship.find({
-            caste:  { $in: [caste] },
-            incomeLimit: { $gte: income },
-            state: state,
-           educationLevel: { $in: [educationLevel] },
-            minMarks: { $lte: marks },
-            $or: [
-                { gender: gender },
-                { gender: "Any" }
-            ]
-        });
+    const student = await Student.findOne({ clerkId });
 
-        res.status(200).json(scholarships);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+    if (!student) {
+      return res.status(404).json({
+        message: "Profile not found. Please complete your profile first.",
+        profileComplete: false
+      });
     }
+
+    const scholarships = await Scholarship.find({
+      caste: { $in: [student.caste] },
+      incomeLimit: { $gte: student.income },
+      state: student.state,
+      educationLevel: { $in: [student.educationLevel] },
+      minMarks: { $lte: student.marks },
+      $or: [
+        { gender: student.gender },
+        { gender: "Any" }
+      ],
+    });
+
+    res.status(200).json({
+      profileComplete: true,
+      student: student.name,
+      eligibleScholarships: scholarships,
+    });
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
