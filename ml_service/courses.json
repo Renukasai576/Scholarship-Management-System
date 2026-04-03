@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Python for Beginners",
+    "platform": "Coursera",
+    "domain": "AI",
+    "skills": "python coding beginner data",
+    "level": "Beginner",
+    "link": "https://coursera.org"
+  },
+  {
+    "title": "Machine Learning Basics",
+    "platform": "NPTEL",
+    "domain": "AI",
+    "skills": "machine learning python statistics",
+    "level": "Intermediate",
+    "link": "https://nptel.ac.in"
+  },
+  {
+    "title": "Web Development Bootcamp",
+    "platform": "Udemy",
+    "domain": "Web",
+    "skills": "html css javascript frontend",
+    "level": "Beginner",
+    "link": "https://udemy.com"
+  },
+  {
+    "title": "React Development",
+    "platform": "Coursera",
+    "domain": "Web",
+    "skills": "react javascript frontend",
+    "level": "Intermediate",
+    "link": "https://coursera.org"
+  },
+  {
+    "title": "Data Science Fundamentals",
+    "platform": "edX",
+    "domain": "Data Science",
+    "skills": "data analysis python statistics",
+    "level": "Beginner",
+    "link": "https://edx.org"
+  },
+  {
+    "title": "Cyber Security Basics",
+    "platform": "Internshala",
+    "domain": "Cybersecurity",
+    "skills": "security networking ethical hacking",
+    "level": "Beginner",
+    "link": "https://internshala.com"
+  }
+]

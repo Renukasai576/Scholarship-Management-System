@@ -6,29 +6,46 @@ const { clerkMiddleware } = require("@clerk/express");
 
 const app = express();
 
-// Middlewares
-app.use(cors());
-app.use(express.json());
-app.use(clerkMiddleware()); // 👈 VERY IMPORTANT
+// ✅ CORS
+app.use(cors({
+  origin: ["http://localhost:3000", "http://localhost:5173", "http://localhost:5174"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
-// MongoDB Connection
+// ✅ BODY PARSER
+app.use(express.json());
+
+// ✅ FIXED CLERK (IMPORTANT)
+app.use(clerkMiddleware()); // 🔥 THIS IS THE FIX
+
+// ✅ MongoDB
 mongoose.connect("mongodb://127.0.0.1:27017/scholoholicDB")
   .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.log("Mongo Error:", err));
 
-// Routes
-const scholarshipRoutes = require("./Routes/ScholarshipRoutes");
-app.use("/api/scholarships", scholarshipRoutes);
+// ✅ ROUTES
+app.use("/api/scholarships", require("./Routes/ScholarshipRoutes"));
+app.use("/api/students", require("./Routes/StudentRoutes"));
+app.use("/api", require("./Routes/stats"));
+app.use("/api/applications", require("./Routes/ApplicationRoute"));
+app.use("/api/users", require("./Routes/userRoutes"));
+app.use("/api/admin", require("./Routes/AdminRoutes"));
+app.use("/api/support-tickets", require("./Routes/SupportTicketRoutes"));
+app.use("/api/recommendations", require("./Routes/RecommendationRoutes"));
 
-const studentRoutes = require("./Routes/StudentRoutes");
-app.use("/api/students", studentRoutes);
+// ✅ DEBUG
+app.get("/test-auth", (req, res) => {
+  console.log("AUTH:", req.auth);
+  res.json(req.auth);
+});
 
-// Test Route (optional)
+// ✅ TEST
 app.get("/", (req, res) => {
   res.send("Backend is running...");
 });
 
-// Start Server
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+// ✅ START
+app.listen(5001, () => {
+  console.log("Server running on port 5001");
 });

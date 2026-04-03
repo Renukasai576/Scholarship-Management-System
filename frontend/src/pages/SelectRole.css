@@ -1,0 +1,40 @@
+.role-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #6366f1, #9333ea);
+}
+
+.role-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  width: 300px;
+}
+
+.role-card h1 {
+  margin-bottom: 20px;
+}
+
+.role-card button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.role-card button:hover {
+  background: #4f46e5;
+}
+.error {
+  color: red;
+  margin-top: 15px;
+  font-weight: 500;
+}
