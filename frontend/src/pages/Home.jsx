@@ -14,7 +14,7 @@ import samsung from "../assets/Samsung.png";
 import apple from "../assets/apple.png";
 import infosys from "../assets/infosys-logo.png";
 import reliance from "../assets/relaince.png";
-import sbi from "../assets/sbi.png";
+import sbi from "../assets/SBI.png";
 
 function Home() {
   const navigate = useNavigate();

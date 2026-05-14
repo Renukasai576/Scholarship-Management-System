@@ -249,7 +249,7 @@ Invoke-WebRequest -Uri http://localhost:5001/api/course-recommend -Method Post -
 ### Test Flask ML Service
 ```powershell
 $body = @{ interests = "AI"; skills = "Python"; goal = "ML Engineer" } | ConvertTo-Json
-Invoke-WebRequest -Uri http://localhost:5002/course-recommend -Method Post -Body $body -ContentType "application/json" -UseBasicParsing | Select-Object -ExpandProperty Content
+Invoke-WebRequest -Uri https://scholarship-management-system-4.onrender.com/course-recommend -Method Post -Body $body -ContentType "application/json" -UseBasicParsing | Select-Object -ExpandProperty Content
 ```
 
 ---

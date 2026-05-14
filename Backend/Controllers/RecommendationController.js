@@ -6,7 +6,7 @@ exports.getCourseRecommendations = async (req, res) => {
     const { interests, skills, goal } = req.body;
 
     // 🤖 Send to Python ML service
-    const response = await axios.post("http://127.0.0.1:5002/course-recommend", {
+    const response = await axios.post("https://scholarship-management-system-4.onrender.com/course-recommend", {
       interests: interests,
       skills: skills,
       goal: goal
