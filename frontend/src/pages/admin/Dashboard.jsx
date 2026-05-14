@@ -1,7 +1,13 @@
 ﻿export default function AdminDashboard() {
   return (
-    <div>
-      <h1>Admin Dashboard Working</h1>
+    <div style={{
+      padding: "40px",
+      fontSize: "32px",
+      color: "white",
+      background: "black",
+      minHeight: "100vh"
+    }}>
+      ADMIN DASHBOARD WORKING ✅
     </div>
   );
 }
