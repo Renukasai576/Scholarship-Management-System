@@ -9,7 +9,7 @@ exports.setRole = async (req, res) => {
 
     const { role } = req.body;
 
-    if (!["student", "partner"].includes(role)) {
+    if (!["student", "partner", "admin"].includes(role)) {
       return res.status(400).json({
         message: "Invalid role selected"
       });
@@ -19,6 +19,12 @@ exports.setRole = async (req, res) => {
 
     if (!user) {
       user = await User.create({ clerkId, role });
+
+      if (role === "admin") {
+        const Admin = require("../Models/Admin");
+        await Admin.create({ clerkId, role: "admin", isActive: true });
+      }
+
       return res.status(200).json(user);
     }
 

@@ -1,4 +1,5 @@
 const Admin = require("../Models/Admin");
+const User = require("../Models/User");
 
 const adminMiddleware = async (req, res, next) => {
   try {
@@ -14,16 +15,22 @@ const adminMiddleware = async (req, res, next) => {
       });
     }
 
-    const admin = await Admin.findOne({ clerkId });
-
+    let admin = await Admin.findOne({ clerkId });
     console.log("📦 Admin from DB:", admin);
 
     if (!admin || !admin.isActive) {
-      console.log("❌ Not an admin or inactive");
+      const user = await User.findOne({ clerkId, role: "admin" });
+      console.log("📦 User admin fallback:", user);
 
-      return res.status(403).json({
-        message: "Access denied. Admin only."
-      });
+      if (!user) {
+        console.log("❌ Not an admin or inactive");
+
+        return res.status(403).json({
+          message: "Access denied. Admin only."
+        });
+      }
+
+      admin = user;
     }
 
     console.log("✅ Admin access granted");
