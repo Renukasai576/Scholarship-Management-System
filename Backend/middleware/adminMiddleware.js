@@ -2,9 +2,17 @@ const Admin = require("../Models/Admin");
 
 const adminMiddleware = async (req, res, next) => {
   try {
-    const clerkId = req.auth.userId;
+
+    // ✅ FIXED
+    const clerkId = req.auth?.userId;
 
     console.log("🔑 Logged in Clerk ID:", clerkId);
+
+    if (!clerkId) {
+      return res.status(401).json({
+        message: "Unauthorized"
+      });
+    }
 
     const admin = await Admin.findOne({ clerkId });
 
@@ -12,6 +20,7 @@ const adminMiddleware = async (req, res, next) => {
 
     if (!admin || !admin.isActive) {
       console.log("❌ Not an admin or inactive");
+
       return res.status(403).json({
         message: "Access denied. Admin only."
       });
@@ -23,8 +32,12 @@ const adminMiddleware = async (req, res, next) => {
     next();
 
   } catch (error) {
+
     console.log("🔥 Error in adminMiddleware:", error);
-    res.status(500).json({ error: error.message });
+
+    res.status(500).json({
+      error: error.message
+    });
   }
 };
 
