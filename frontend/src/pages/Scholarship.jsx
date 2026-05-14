@@ -94,6 +94,27 @@ function Scholarships() {
         <>
           <h2 className="scholarships-title">Eligible Scholarships 🎓</h2>
 
+          <div className="scholarships-intro">
+            <p>
+              Find the best-fit scholarships with full document guidance, deadline tracking, and match insights — all on one page.
+            </p>
+          </div>
+
+          <div className="scholarships-status-row">
+            <div className="status-card">
+              <h3>Document Ready</h3>
+              <p>Quickly see what proofs you need for each scholarship.</p>
+            </div>
+            <div className="status-card">
+              <h3>Deadline Focused</h3>
+              <p>Stay ahead with live countdowns and easy apply links.</p>
+            </div>
+            <div className="status-card">
+              <h3>Smart Matches</h3>
+              <p>Scholarships ranked by fit based on your profile data.</p>
+            </div>
+          </div>
+
           {scholarships.length > 0 ? (
             <div className="scholarships-grid">
 

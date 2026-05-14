@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@clerk/clerk-react';
+import TopNPTELSuggestions from '../components/TopNPTELSuggestions';
 import './CareerGuidance.css';
 
 function CareerGuidance() {
@@ -107,6 +108,8 @@ function CareerGuidance() {
 
   return (
     <div className="career-guidance">
+      <TopNPTELSuggestions />
+
       {/* Header */}
       <div className="guidance-header">
         <h1>{matchesText}</h1>

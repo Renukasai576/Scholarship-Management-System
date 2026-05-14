@@ -7,6 +7,145 @@
   color: var(--color-text);
 }
 
+.top-nptel-suggestions {
+  width: min(1120px, 100%);
+  margin: 0 auto var(--spacing-xl);
+  padding: 1.25rem;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 29, 59, 0.08);
+  box-shadow: 0 18px 45px rgba(15, 29, 59, 0.08);
+}
+
+.top-nptel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.top-nptel-label {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--color-heading);
+}
+
+.top-nptel-copy {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.top-nptel-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.top-nptel-card {
+  background: white;
+  border: 1px solid rgba(15, 29, 59, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  box-shadow: 0 10px 24px rgba(15, 29, 59, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.top-nptel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 29, 59, 0.12);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.top-nptel-card-best {
+  border-color: rgba(245, 158, 11, 0.25);
+  background: rgba(254, 240, 138, 0.18);
+}
+
+.top-nptel-rank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top-nptel-rank {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.top-nptel-best {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+}
+
+.top-nptel-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.top-nptel-info {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.top-nptel-action {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-nptel-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(59, 130, 246, 0.24);
+}
+
+.top-nptel-empty {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(243, 244, 246, 0.9);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.top-nptel-error {
+  color: var(--color-danger);
+}
+
+@media (max-width: 960px) {
+  .top-nptel-cards {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .top-nptel-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 .guidance-header {
   width: min(1120px, 100%);
   margin: 0 auto var(--spacing-xl);

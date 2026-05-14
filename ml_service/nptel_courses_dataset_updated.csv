@@ -1,0 +1,121 @@
+courseId,title,domain,skills,level,durationWeeks,platform,rating,link
+1,Introduction to Artificial Intelligence,AI,TensorFlow Python PyTorch,Advanced,12,NPTEL,4.1,https://nptel.ac.in/
+2,Machine Learning Fundamentals,AI,TensorFlow PyTorch Python,Intermediate,10,NPTEL,4.7,https://nptel.ac.in/
+3,Deep Learning using TensorFlow,AI,TensorFlow Python DeepLearning,Advanced,5,NPTEL,4.5,https://nptel.ac.in/
+4,Computer Vision Essentials,AI,MachineLearning DeepLearning PyTorch,Beginner,5,NPTEL,4.0,https://nptel.ac.in/
+5,Neural Networks and Applications,AI,DeepLearning TensorFlow PyTorch,Advanced,9,NPTEL,4.6,https://nptel.ac.in/
+6,AI for Engineers,AI,TensorFlow PyTorch DeepLearning,Advanced,8,NPTEL,4.3,https://nptel.ac.in/
+7,Natural Language Processing,AI,PyTorch TensorFlow MachineLearning,Beginner,7,NPTEL,4.1,https://nptel.ac.in/
+8,Reinforcement Learning Basics,AI,DeepLearning TensorFlow Python,Beginner,9,NPTEL,4.6,https://nptel.ac.in/
+9,Advanced Machine Learning,AI,TensorFlow MachineLearning Python,Intermediate,11,NPTEL,4.9,https://nptel.ac.in/
+10,Generative AI Concepts,AI,DeepLearning Python PyTorch,Intermediate,4,NPTEL,3.8,https://nptel.ac.in/
+11,AI in Healthcare,AI,PyTorch MachineLearning TensorFlow,Advanced,4,NPTEL,4.3,https://nptel.ac.in/
+12,Applied Artificial Intelligence,AI,TensorFlow PyTorch DeepLearning,Advanced,6,NPTEL,4.0,https://nptel.ac.in/
+13,Pattern Recognition Techniques,AI,Python DeepLearning MachineLearning,Advanced,11,NPTEL,5.0,https://nptel.ac.in/
+14,Deep Neural Networks,AI,Python DeepLearning PyTorch,Advanced,9,NPTEL,4.2,https://nptel.ac.in/
+15,AI Powered Systems,AI,DeepLearning MachineLearning PyTorch,Intermediate,8,NPTEL,3.9,https://nptel.ac.in/
+16,Python for Data Science,Data Science,Visualization Statistics Python,Beginner,11,NPTEL,4.8,https://nptel.ac.in/
+17,Data Analytics with Python,Data Science,Python Pandas Visualization,Intermediate,5,NPTEL,3.9,https://nptel.ac.in/
+18,Statistical Learning,Data Science,Statistics Visualization Python,Advanced,8,NPTEL,4.9,https://nptel.ac.in/
+19,Data Visualization Techniques,Data Science,Visualization Python NumPy,Advanced,12,NPTEL,4.4,https://nptel.ac.in/
+20,Big Data Fundamentals,Data Science,Pandas NumPy Visualization,Advanced,9,NPTEL,4.5,https://nptel.ac.in/
+21,Applied Data Science,Data Science,Pandas Statistics Python,Advanced,6,NPTEL,3.9,https://nptel.ac.in/
+22,Data Mining Concepts,Data Science,Pandas Statistics NumPy,Advanced,5,NPTEL,4.9,https://nptel.ac.in/
+23,Business Analytics,Data Science,NumPy Statistics Python,Intermediate,6,NPTEL,4.5,https://nptel.ac.in/
+24,Data Science for Beginners,Data Science,NumPy Statistics Python,Beginner,11,NPTEL,4.1,https://nptel.ac.in/
+25,Advanced Data Analysis,Data Science,Visualization Statistics NumPy,Advanced,7,NPTEL,4.7,https://nptel.ac.in/
+26,Predictive Analytics,Data Science,Pandas Statistics Visualization,Intermediate,11,NPTEL,4.7,https://nptel.ac.in/
+27,Data Wrangling using Python,Data Science,Visualization Python NumPy,Intermediate,10,NPTEL,4.0,https://nptel.ac.in/
+28,Statistics for Data Science,Data Science,Python Pandas Visualization,Beginner,11,NPTEL,4.5,https://nptel.ac.in/
+29,Data Engineering Basics,Data Science,Visualization Python Statistics,Intermediate,4,NPTEL,4.4,https://nptel.ac.in/
+30,Practical Data Science,Data Science,NumPy Pandas Python,Beginner,8,NPTEL,4.5,https://nptel.ac.in/
+31,Full Stack Web Development,Web Development,NodeJS HTML React,Beginner,9,NPTEL,4.6,https://nptel.ac.in/
+32,Frontend Engineering,Web Development,React JavaScript HTML,Advanced,8,NPTEL,4.9,https://nptel.ac.in/
+33,Modern JavaScript Development,Web Development,CSS React NodeJS,Intermediate,5,NPTEL,4.8,https://nptel.ac.in/
+34,React JS Essentials,Web Development,JavaScript React NodeJS,Beginner,11,NPTEL,3.9,https://nptel.ac.in/
+35,HTML and CSS Fundamentals,Web Development,CSS HTML React,Intermediate,5,NPTEL,4.8,https://nptel.ac.in/
+36,Node.js Backend Development,Web Development,CSS React JavaScript,Advanced,10,NPTEL,4.7,https://nptel.ac.in/
+37,Responsive Web Design,Web Development,CSS React JavaScript,Advanced,8,NPTEL,4.0,https://nptel.ac.in/
+38,Web Application Development,Web Development,HTML CSS NodeJS,Intermediate,11,NPTEL,3.8,https://nptel.ac.in/
+39,Advanced React Applications,Web Development,CSS HTML NodeJS,Intermediate,7,NPTEL,4.7,https://nptel.ac.in/
+40,MERN Stack Development,Web Development,HTML JavaScript React,Beginner,4,NPTEL,4.5,https://nptel.ac.in/
+41,Web APIs and Integration,Web Development,NodeJS HTML React,Advanced,6,NPTEL,4.4,https://nptel.ac.in/
+42,Progressive Web Apps,Web Development,React JavaScript NodeJS,Beginner,9,NPTEL,4.2,https://nptel.ac.in/
+43,UI Development Techniques,Web Development,NodeJS CSS HTML,Advanced,5,NPTEL,4.1,https://nptel.ac.in/
+44,JavaScript for Beginners,Web Development,HTML CSS JavaScript,Intermediate,7,NPTEL,5.0,https://nptel.ac.in/
+45,Building Dynamic Websites,Web Development,JavaScript CSS React,Advanced,10,NPTEL,4.9,https://nptel.ac.in/
+46,Cybersecurity Fundamentals,Cybersecurity,Security Networking Linux,Beginner,11,NPTEL,4.0,https://nptel.ac.in/
+47,Ethical Hacking Essentials,Cybersecurity,Security Linux KaliLinux,Beginner,5,NPTEL,4.4,https://nptel.ac.in/
+48,Network Security Concepts,Cybersecurity,Networking EthicalHacking Security,Beginner,4,NPTEL,4.1,https://nptel.ac.in/
+49,Linux Security Administration,Cybersecurity,Networking Security KaliLinux,Advanced,8,NPTEL,4.3,https://nptel.ac.in/
+50,Information Security Basics,Cybersecurity,KaliLinux Linux Security,Beginner,12,NPTEL,4.8,https://nptel.ac.in/
+51,Advanced Ethical Hacking,Cybersecurity,Security Networking Linux,Intermediate,5,NPTEL,4.1,https://nptel.ac.in/
+52,Cyber Threat Analysis,Cybersecurity,Networking KaliLinux Security,Beginner,6,NPTEL,4.1,https://nptel.ac.in/
+53,Digital Forensics,Cybersecurity,KaliLinux EthicalHacking Security,Advanced,5,NPTEL,4.2,https://nptel.ac.in/
+54,Web Security Techniques,Cybersecurity,KaliLinux Networking EthicalHacking,Beginner,6,NPTEL,3.9,https://nptel.ac.in/
+55,Security Testing and Auditing,Cybersecurity,Linux Networking Security,Beginner,12,NPTEL,3.9,https://nptel.ac.in/
+56,Cyber Defense Strategies,Cybersecurity,Security KaliLinux Networking,Intermediate,5,NPTEL,3.9,https://nptel.ac.in/
+57,Secure System Design,Cybersecurity,KaliLinux Security EthicalHacking,Advanced,5,NPTEL,4.1,https://nptel.ac.in/
+58,Malware Analysis Basics,Cybersecurity,KaliLinux EthicalHacking Security,Intermediate,8,NPTEL,4.3,https://nptel.ac.in/
+59,Penetration Testing,Cybersecurity,Networking Security EthicalHacking,Advanced,9,NPTEL,4.5,https://nptel.ac.in/
+60,Cryptography Fundamentals,Cybersecurity,EthicalHacking KaliLinux Linux,Advanced,12,NPTEL,4.4,https://nptel.ac.in/
+61,Cloud Computing Concepts,Cloud Computing,Azure Docker Kubernetes,Intermediate,8,NPTEL,4.5,https://nptel.ac.in/
+62,AWS Fundamentals,Cloud Computing,DevOps AWS Azure,Beginner,10,NPTEL,4.0,https://nptel.ac.in/
+63,DevOps and CI CD,Cloud Computing,Kubernetes Azure AWS,Advanced,8,NPTEL,4.9,https://nptel.ac.in/
+64,Docker and Kubernetes,Cloud Computing,AWS Azure Docker,Intermediate,7,NPTEL,3.9,https://nptel.ac.in/
+65,Cloud Infrastructure Management,Cloud Computing,DevOps AWS Kubernetes,Beginner,9,NPTEL,4.2,https://nptel.ac.in/
+66,Azure Cloud Essentials,Cloud Computing,Azure DevOps Kubernetes,Advanced,10,NPTEL,4.0,https://nptel.ac.in/
+67,Serverless Computing,Cloud Computing,Kubernetes Docker Azure,Intermediate,5,NPTEL,4.9,https://nptel.ac.in/
+68,Cloud Security Practices,Cloud Computing,Kubernetes Docker DevOps,Advanced,9,NPTEL,4.6,https://nptel.ac.in/
+69,Infrastructure as Code,Cloud Computing,Docker Azure DevOps,Beginner,12,NPTEL,4.1,https://nptel.ac.in/
+70,Distributed Cloud Systems,Cloud Computing,Azure AWS Docker,Intermediate,7,NPTEL,4.4,https://nptel.ac.in/
+71,Cloud Native Development,Cloud Computing,AWS Azure DevOps,Intermediate,12,NPTEL,4.1,https://nptel.ac.in/
+72,Kubernetes for Beginners,Cloud Computing,DevOps Docker AWS,Beginner,11,NPTEL,4.6,https://nptel.ac.in/
+73,Virtualization Technologies,Cloud Computing,Azure Docker Kubernetes,Intermediate,9,NPTEL,4.6,https://nptel.ac.in/
+74,Cloud Deployment Models,Cloud Computing,Kubernetes DevOps Azure,Advanced,10,NPTEL,4.0,https://nptel.ac.in/
+75,Scalable Cloud Applications,Cloud Computing,Docker Kubernetes DevOps,Advanced,6,NPTEL,4.3,https://nptel.ac.in/
+76,Data Structures and Algorithms,Programming,C++ Algorithms OOP,Advanced,10,NPTEL,4.0,https://nptel.ac.in/
+77,Java Programming Masterclass,Programming,C++ Java OOP,Advanced,11,NPTEL,4.0,https://nptel.ac.in/
+78,C++ for Competitive Programming,Programming,Algorithms Java C++,Intermediate,4,NPTEL,4.9,https://nptel.ac.in/
+79,Problem Solving using Python,Programming,Algorithms C++ OOP,Beginner,8,NPTEL,5.0,https://nptel.ac.in/
+80,Object Oriented Programming,Programming,Algorithms OOP C++,Beginner,6,NPTEL,4.0,https://nptel.ac.in/
+81,Advanced Java Concepts,Programming,C++ Algorithms OOP,Advanced,11,NPTEL,4.0,https://nptel.ac.in/
+82,Programming Logic Building,Programming,OOP C++ Java,Intermediate,8,NPTEL,4.5,https://nptel.ac.in/
+83,Algorithms Design Techniques,Programming,Algorithms Java OOP,Intermediate,6,NPTEL,3.9,https://nptel.ac.in/
+84,Coding Interview Preparation,Programming,Algorithms DSA OOP,Advanced,7,NPTEL,4.7,https://nptel.ac.in/
+85,Programming Fundamentals,Programming,C++ Java DSA,Beginner,9,NPTEL,4.8,https://nptel.ac.in/
+86,System Design Basics,Programming,OOP Java DSA,Advanced,4,NPTEL,5.0,https://nptel.ac.in/
+87,DSA with C++,Programming,Algorithms DSA OOP,Beginner,9,NPTEL,4.6,https://nptel.ac.in/
+88,Python Programming Essentials,Programming,Java C++ OOP,Beginner,7,NPTEL,4.0,https://nptel.ac.in/
+89,Software Development Practices,Programming,DSA C++ Algorithms,Advanced,6,NPTEL,4.9,https://nptel.ac.in/
+90,Competitive Coding Techniques,Programming,Java Algorithms DSA,Advanced,10,NPTEL,4.5,https://nptel.ac.in/
+91,Database Management Systems,Database,MySQL DatabaseDesign MongoDB,Advanced,6,NPTEL,4.7,https://nptel.ac.in/
+92,SQL for Beginners,Database,SQL DatabaseDesign MongoDB,Advanced,8,NPTEL,4.4,https://nptel.ac.in/
+93,Advanced SQL Queries,Database,DatabaseDesign PostgreSQL MongoDB,Intermediate,4,NPTEL,4.7,https://nptel.ac.in/
+94,MongoDB Essentials,Database,MySQL DatabaseDesign MongoDB,Advanced,10,NPTEL,4.1,https://nptel.ac.in/
+95,Database Design Concepts,Database,MySQL MongoDB PostgreSQL,Intermediate,12,NPTEL,4.1,https://nptel.ac.in/
+96,PostgreSQL Administration,Database,PostgreSQL DatabaseDesign MySQL,Beginner,6,NPTEL,4.9,https://nptel.ac.in/
+97,NoSQL Database Systems,Database,PostgreSQL MySQL MongoDB,Advanced,6,NPTEL,3.8,https://nptel.ac.in/
+98,Relational Database Design,Database,MongoDB SQL PostgreSQL,Beginner,6,NPTEL,3.9,https://nptel.ac.in/
+99,Data Warehousing,Database,DatabaseDesign MongoDB SQL,Intermediate,4,NPTEL,4.2,https://nptel.ac.in/
+100,Big Data Storage Systems,Database,DatabaseDesign MongoDB PostgreSQL,Advanced,7,NPTEL,4.4,https://nptel.ac.in/
+101,MySQL Development,Database,SQL DatabaseDesign MySQL,Intermediate,6,NPTEL,4.0,https://nptel.ac.in/
+102,Database Optimization,Database,PostgreSQL DatabaseDesign MySQL,Intermediate,7,NPTEL,4.0,https://nptel.ac.in/
+103,Transaction Management,Database,MongoDB PostgreSQL MySQL,Beginner,5,NPTEL,4.9,https://nptel.ac.in/
+104,Distributed Databases,Database,MySQL PostgreSQL DatabaseDesign,Advanced,5,NPTEL,4.6,https://nptel.ac.in/
+105,Cloud Database Systems,Database,MySQL MongoDB PostgreSQL,Advanced,12,NPTEL,5.0,https://nptel.ac.in/
+106,Android App Development,Mobile Development,Flutter Kotlin Android,Beginner,11,NPTEL,4.4,https://nptel.ac.in/
+107,Flutter Application Development,Mobile Development,Flutter Android Kotlin,Advanced,12,NPTEL,4.6,https://nptel.ac.in/
+108,React Native Essentials,Mobile Development,Flutter Firebase Kotlin,Beginner,9,NPTEL,4.2,https://nptel.ac.in/
+109,Mobile UI Design,Mobile Development,Firebase Flutter Kotlin,Advanced,6,NPTEL,4.3,https://nptel.ac.in/
+110,Kotlin for Android,Mobile Development,ReactNative Firebase Flutter,Advanced,10,NPTEL,4.0,https://nptel.ac.in/
+111,Cross Platform App Development,Mobile Development,Kotlin Firebase Flutter,Advanced,9,NPTEL,4.0,https://nptel.ac.in/
+112,Firebase Integration,Mobile Development,ReactNative Flutter Kotlin,Beginner,11,NPTEL,4.6,https://nptel.ac.in/
+113,Mobile Backend Systems,Mobile Development,Kotlin Firebase Flutter,Intermediate,11,NPTEL,4.3,https://nptel.ac.in/
+114,iOS Development Basics,Mobile Development,Android Flutter ReactNative,Advanced,4,NPTEL,4.2,https://nptel.ac.in/
+115,Advanced Flutter Apps,Mobile Development,Flutter Firebase ReactNative,Advanced,11,NPTEL,4.0,https://nptel.ac.in/
+116,Android Studio Essentials,Mobile Development,Android Flutter Kotlin,Advanced,11,NPTEL,4.3,https://nptel.ac.in/
+117,Building Mobile Applications,Mobile Development,Firebase Kotlin Android,Beginner,12,NPTEL,4.9,https://nptel.ac.in/
+118,Mobile App Testing,Mobile Development,Flutter Firebase Kotlin,Beginner,10,NPTEL,4.9,https://nptel.ac.in/
+119,Modern Mobile Development,Mobile Development,Kotlin Flutter Android,Intermediate,6,NPTEL,4.5,https://nptel.ac.in/
+120,Hybrid App Development,Mobile Development,Android Firebase ReactNative,Intermediate,11,NPTEL,4.8,https://nptel.ac.in/

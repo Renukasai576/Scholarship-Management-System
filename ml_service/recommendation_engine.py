@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import pandas as pd
 import json
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -8,19 +9,41 @@ from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 CORS(app)
 
-# Load dataset
-with open("courses.json") as f:
-    courses = json.load(f)
+# Load datasets
+try:
+    courses_df = pd.read_csv("nptel_courses_dataset_updated.csv")
+    recommend_df = pd.read_csv("nptel_recommendations_dataset.csv")
+    print(f"✅ Courses loaded: {len(courses_df)} courses")
+    print(f"✅ Recommendations loaded: {len(recommend_df)} recommendations")
+except Exception as e:
+    print(f"❌ Error loading datasets: {e}")
+    courses_df = pd.DataFrame()
+    recommend_df = pd.DataFrame()
 
-# Prepare text data
-course_texts = [
-    c["domain"] + " " + c["skills"] + " " + c["level"]
-    for c in courses
-]
+# Calculate recommendation counts
+if len(recommend_df) > 0:
+    recommend_counts = recommend_df.groupby("courseId").size().reset_index(name="recommendedBy")
+    courses_df = courses_df.merge(recommend_counts, on="courseId", how="left")
+    courses_df["recommendedBy"] = courses_df["recommendedBy"].fillna(0)
+else:
+    courses_df["recommendedBy"] = 0
 
-# ML Model
-vectorizer = TfidfVectorizer()
-course_vectors = vectorizer.fit_transform(course_texts)
+# Prepare text data for TF-IDF
+if len(courses_df) > 0:
+    course_texts = (
+        courses_df["domain"].astype(str) + " " + 
+        courses_df["skills"].astype(str) + " " + 
+        courses_df["level"].astype(str)
+    ).tolist()
+    
+    # ML Model
+    vectorizer = TfidfVectorizer(max_features=100, stop_words='english')
+    course_vectors = vectorizer.fit_transform(course_texts)
+    print("✅ TF-IDF vectorizer ready")
+else:
+    course_texts = []
+    vectorizer = None
+    course_vectors = None
 
 # Career paths
 career_paths = {
@@ -55,6 +78,9 @@ def home():
 
 @app.route("/course-recommend", methods=["POST"])
 def recommend_courses():
+    if len(courses_df) == 0 or vectorizer is None:
+        return jsonify({"error": "Recommendation system not ready"}), 500
+    
     data = request.json
 
     user_text = (
@@ -72,29 +98,38 @@ def recommend_courses():
     user_goal = data.get("goal", "").lower()
 
     scored = []
-    for idx, course in enumerate(courses):
+    for idx, row in courses_df.iterrows():
         score = float(similarity[idx]) if idx < len(similarity) else 0.0
         reasons = []
-        course_domain = course.get("domain", "").lower()
-        course_skills = set(course.get("skills", "").split())
+        course_domain = str(row.get("domain", "")).lower()
+        course_skills = str(row.get("skills", "")).split()
 
         if course_domain and course_domain in user_text_clean:
-            reasons.append(f"Matches your interest in {course.get('domain')}")
+            reasons.append(f"Matches your interest in {row.get('domain')}")
 
-        matching_skills = user_skills.intersection(course_skills)
-        for skill in matching_skills:
+        matching_skills = user_skills.intersection(set(s.lower() for s in course_skills))
+        for skill in list(matching_skills)[:2]:
             reasons.append(f"Uses {skill} (your skill)")
 
         if course_domain and course_domain in user_goal:
-            reasons.append(f"Aligns with your goal in {course.get('domain')}")
+            reasons.append(f"Aligns with your goal in {row.get('domain')}")
+
+        if int(row.get("recommendedBy", 0)) > 10:
+            reasons.append("Highly recommended by seniors")
 
         if not reasons:
             reasons.append("Relevant content to accelerate your learning")
 
         scored.append({
-            **course,
+            "courseId": int(row["courseId"]),
+            "title": row["title"],
+            "domain": row["domain"],
+            "level": row["level"],
+            "rating": float(row["rating"]),
+            "recommendedBy": int(row.get("recommendedBy", 0)),
+            "link": row["link"],
             "matchScore": round(score * 100, 1),
-            "matchReasons": reasons
+            "matchReasons": reasons[:3]
         })
 
     recommended = sorted(scored, key=lambda x: x["matchScore"], reverse=True)[:5]

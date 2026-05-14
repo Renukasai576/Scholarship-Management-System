@@ -22,10 +22,11 @@ body {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  cursor: pointer;
 }
 
 .logo {
-  width: 120px;
+  width: 96px;
   height: auto;
   object-fit: contain;
 }
@@ -41,6 +42,8 @@ body {
 .nav-center {
   display: flex;
   gap: var(--spacing-xl);
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-center a {
@@ -77,24 +80,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
   flex-wrap: nowrap;
   flex-shrink: 0;
+}
+
+.nav-right button {
+  min-height: 44px;
+}
+
+.navbar {
+  padding: var(--spacing-md) calc(var(--spacing-lg) + 0.5rem);
 }
 
 .profile-btn-main,
 .logout-btn,
 .nav-btn,
 .nav-link {
-  padding: 0.5rem 0.9rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: var(--transition-fast);
   white-space: nowrap;
   flex-shrink: 0;
+  min-height: 44px;
 }
 
 .profile-btn-main,
