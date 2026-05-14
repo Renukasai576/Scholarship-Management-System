@@ -35,6 +35,8 @@ function SelectRole() {
       // ✅ redirect
       if (role === "partner") {
         navigate("/partner");
+      } else if (role === "admin") {
+        navigate("/admin/dashboard");
       } else {
         navigate("/dashboard");
       }
@@ -58,6 +60,10 @@ function SelectRole() {
 
         <button onClick={() => handleRole("partner")} disabled={loading}>
           🏢 Partner
+        </button>
+
+        <button onClick={() => handleRole("admin")} disabled={loading}>
+          🛠️ Admin
         </button>
 
         {error && <p className="error">{error}</p>}
