@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(clerkMiddleware()); // 🔥 THIS IS THE FIX
 
 // ✅ MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/scholoholicDB")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Mongo Error:", err));
 
@@ -222,6 +222,8 @@ app.get("/", (req, res) => {
 });
 
 // ✅ START
-app.listen(5001, () => {
-  console.log("Server running on port 5001");
+const PORT = process.env.PORT || 5001;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
