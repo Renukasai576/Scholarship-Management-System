@@ -42,13 +42,14 @@ function AdminDashboard() {
         console.log("ELIGIBILITY:", eligibilityRes.data);
         console.log("PENDING:", pendingRes.data);
 
-        setStats(statsRes.data || {});
-        setEligibility(
-          Array.isArray(eligibilityRes.data) ? eligibilityRes.data : []
-        );
-        setPendingScholarships(
-          Array.isArray(pendingRes.data) ? pendingRes.data : []
-        );
+        // Ensure data is in correct format
+        const safeStats = (typeof statsRes.data === 'object' && statsRes.data !== null) ? statsRes.data : {};
+        const safeEligibility = Array.isArray(eligibilityRes.data) ? eligibilityRes.data : [];
+        const safePendingScholarships = Array.isArray(pendingRes.data) ? pendingRes.data : [];
+
+        setStats(safeStats || {});
+        setEligibility(safeEligibility);
+        setPendingScholarships(safePendingScholarships);
 
       } catch (err) {
         console.log("Dashboard Error:", err);

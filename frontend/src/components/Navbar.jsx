@@ -38,8 +38,11 @@ function Navbar() {
         });
 
         console.log("ROLE:", res.data);
+        console.log("Role string:", res.data?.role);
 
-        setRole(res.data?.role);
+        // Ensure role is always a string, not an object
+        const roleValue = typeof res.data?.role === 'string' ? res.data.role : null;
+        setRole(roleValue);
 
       } catch (err) {
         console.log("Role fetch error:", err);
