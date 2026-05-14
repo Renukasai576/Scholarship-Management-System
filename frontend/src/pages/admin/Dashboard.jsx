@@ -85,76 +85,15 @@ function AdminDashboard() {
     return <p>Loading...</p>;
   }
 
+  // TEMPORARY TEST - if error disappears, problem is in dashboard JSX
   return (
     <div style={{ display: "flex" }}>
       <AdminSidebar />
-
       <div style={container}>
-        <h1>Dashboard</h1>
-
-        {/* 🔥 STATS */}
-        <div style={cardContainer}>
-          <div style={card}>
-            <h3>Total Students</h3>
-            <p>{stats?.totalStudents || 0}</p>
-          </div>
-
-          <div style={card}>
-            <h3>Total Scholarships</h3>
-            <p>{stats?.totalScholarships || 0}</p>
-          </div>
-        </div>
-
-        {/* 🔥 ELIGIBILITY */}
-        <h2 style={{ marginTop: "30px" }}>Eligibility Stats</h2>
-
-        {eligibility.length === 0 ? (
-          <p>No data available</p>
-        ) : (
-          <div style={grid}>
-            {eligibility.map((e, i) => (
-              <div key={i} style={card}>
-                <h3>{e?.scholarshipName || "Unknown"}</h3>
-                <p style={{ fontWeight: "bold" }}>
-                  {e?.eligibleStudents || 0} Students Eligible
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* 🔥 PENDING SCHOLARSHIPS */}
-        <h2 style={{ marginTop: "30px" }}>Pending Scholarship Approvals</h2>
-
-        {pendingScholarships.length === 0 ? (
-          <p>No pending scholarships</p>
-        ) : (
-          <div style={grid}>
-            {pendingScholarships.map((scholarship) => (
-              <div key={scholarship._id} style={card}>
-                <h3>{scholarship.name}</h3>
-                <p><strong>Provider:</strong> {scholarship.provider}</p>
-                <p><strong>State:</strong> {scholarship.state}</p>
-                <p><strong>Income Limit:</strong> ₹{scholarship.incomeLimit}</p>
-                <p><strong>Min Marks:</strong> {scholarship.minMarks}%</p>
-                <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
-                  <button
-                    onClick={() => handleApproval(scholarship._id, "approve")}
-                    style={approveBtn}
-                  >
-                    Approve
-                  </button>
-                  <button
-                    onClick={() => handleApproval(scholarship._id, "reject")}
-                    style={rejectBtn}
-                  >
-                    Reject
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        <h1>Admin Dashboard Working ✅</h1>
+        <p>Stats: {JSON.stringify(stats)}</p>
+        <p>Eligibility count: {eligibility.length}</p>
+        <p>Pending count: {pendingScholarships.length}</p>
       </div>
     </div>
   );
