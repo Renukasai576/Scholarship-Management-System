@@ -8,7 +8,7 @@ function TopNPTELSuggestions() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch("http://localhost:5001/api/top-nptel-courses");
+        const response = await fetch("https://scholarship-management-system-runz.onrender.com/api/top-nptel-courses");
         if (!response.ok) {
           throw new Error(`Failed to load courses (${response.status})`);
         }

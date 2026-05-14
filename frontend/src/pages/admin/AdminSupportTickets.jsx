@@ -35,7 +35,7 @@ function AdminSupportTickets() {
 
       if (params.length > 0) query += '?' + params.join('&');
 
-      const response = await fetch(`http://localhost:5001${query}`);
+      const response = await fetch(`https://scholarship-management-system-runz.onrender.com${query}`);
 
       if (response.ok) {
         const data = await response.json();
@@ -53,7 +53,7 @@ function AdminSupportTickets() {
 
   const fetchStats = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/support-tickets/admin/stats');
+      const response = await fetch('https://scholarship-management-system-runz.onrender.com/api/support-tickets/admin/stats');
 
       if (response.ok) {
         const data = await response.json();
@@ -68,7 +68,7 @@ function AdminSupportTickets() {
   const updateTicketStatus = async (ticketId, newStatus) => {
     try {
       const response = await fetch(
-        `http://localhost:5001/api/support-tickets/admin/tickets/${ticketId}/status`,
+        `https://scholarship-management-system-runz.onrender.com/api/support-tickets/admin/tickets/${ticketId}/status`,
         {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
@@ -97,7 +97,7 @@ function AdminSupportTickets() {
 
     try {
       const response = await fetch(
-        `http://localhost:5001/api/support-tickets/admin/tickets/${respondingTo}/respond`,
+        `https://scholarship-management-system-runz.onrender.com/api/support-tickets/admin/tickets/${respondingTo}/respond`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],  server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'https://scholarship-management-system-runz.onrender.com',
         changeOrigin: true,
         secure: false,
       }

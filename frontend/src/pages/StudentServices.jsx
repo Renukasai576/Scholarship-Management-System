@@ -106,7 +106,7 @@ function StudentServices() {
       setTicketsLoading(true);
       setTicketsError(null);
       const token = await getToken();
-      const response = await fetch('http://localhost:5001/api/support-tickets/my-tickets', {
+      const response = await fetch('https://scholarship-management-system-runz.onrender.com/api/support-tickets/my-tickets', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ function StudentServices() {
         setLoading(true);
         setFormError(null);
         const token = await getToken();
-        const response = await fetch('http://localhost:5001/api/support-tickets', {
+        const response = await fetch('https://scholarship-management-system-runz.onrender.com/api/support-tickets', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -203,7 +203,7 @@ function StudentServices() {
   const handleCloseTicket = async (ticketId) => {
     try {
       const token = await getToken();
-      const response = await fetch(`http://localhost:5001/api/support-tickets/${ticketId}/close`, {
+      const response = await fetch(`https://scholarship-management-system-runz.onrender.com/api/support-tickets/${ticketId}/close`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
