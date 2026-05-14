@@ -39,7 +39,7 @@ function CareerGuidance() {
 
     try {
       const token = await getToken();
-      const response = await fetch('https://scholarship-management-system-runz.onrender.com/api/recommendations', {
+      const response = await fetch('http://localhost:5001/api/recommendations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

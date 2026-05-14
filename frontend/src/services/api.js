@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://scholarship-management-system-runz.onrender.com/api", // your backend URL
+  baseURL: "http://localhost:5001/api",
   headers: {
     "Content-Type": "application/json",
   },
